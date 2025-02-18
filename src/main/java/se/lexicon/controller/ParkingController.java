@@ -3,17 +3,24 @@ package se.lexicon.controller;
 import se.lexicon.dao.CustomerDao;
 import se.lexicon.dao.CustomerDaoImpl;
 import se.lexicon.model.Customer;
+import se.lexicon.model.ParkingSpot;
+import se.lexicon.model.Vehicle;
 import se.lexicon.view.ConsoleUI;
+
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class ParkingController {
 
     ConsoleUI consoleUI;
     CustomerDao customerDao;
+    ArrayList<ParkingSpot> parkingSpots;
 
 
     public ParkingController() {
         consoleUI = new ConsoleUI();
         customerDao = new CustomerDaoImpl();
+        parkingSpots = lexiconParkingSpots();
     }
 
     public void run() {
@@ -27,7 +34,7 @@ public class ParkingController {
                     registerCustomer();
                     break;
                 case "2":
-                    displayParkingSpots();
+                    consoleUI.displayParkingSpots(parkingSpots);
                     break;
                 case "3":
                     reserveParkingSpot();
@@ -59,6 +66,7 @@ public class ParkingController {
 
     private void displayParkingSpots() {
         // todo implement later
+        consoleUI.displayParkingSpots(lexiconParkingSpots());
     }
 
 
@@ -71,5 +79,13 @@ public class ParkingController {
         // todo implement later
     }
 
+
+    private ArrayList<ParkingSpot> lexiconParkingSpots() {
+        ArrayList<ParkingSpot> arrayListToReturn = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            arrayListToReturn.add(new ParkingSpot());
+        }
+        return  arrayListToReturn;
+    }
 
 }

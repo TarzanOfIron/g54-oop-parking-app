@@ -37,6 +37,8 @@ public class ConsoleUI {
         return input;
     }
 
+
+
     public Customer getCustomerInfoWithVehicle(){
         scanner.nextLine();
         System.out.println("Enter name:");
@@ -75,7 +77,17 @@ public class ConsoleUI {
 
 
     public void displayParkingSpots(List<ParkingSpot> parkingSpots){
-        // todo: needs completion
+            System.out.print("|");
+        for (ParkingSpot parkingSpot : parkingSpots) {
+            if (parkingSpot.isAvailable()) {
+                System.out.print(" ");
+            } else {
+                System.out.print("X");
+            }
+            System.out.print("|");
+        }
+        System.out.println();
+
     }
 
 }
