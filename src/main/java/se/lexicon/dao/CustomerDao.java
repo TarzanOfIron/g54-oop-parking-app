@@ -8,6 +8,6 @@ public interface CustomerDao {
 
     Customer create(Customer customer);
 
-    Optional<Customer> findById(Integer id);
+    Customer findById(Integer id);
 
 }

@@ -43,17 +43,18 @@ public class CustomerTest {
 
     @Test
     void testSetNullPhoneNumber() {
-        // todo: implement later
+        assertThrows(IllegalArgumentException.class, () -> testObject.setPhoneNumber(null));
     }
 
 
     @Test
     void testSetName() {
-        // todo: implement later
+        testObject.setName("Boti");
+        assertEquals("Boti", testObject.getName());
     }
 
     @Test
     void testSetInvalidName() {
-        // todo: implement later
+        assertThrows(IllegalArgumentException.class, () -> testObject.setName(" "));
     }
 }

@@ -25,14 +25,14 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public Optional<Customer> findById(Integer id) {
+    public Customer findById(Integer id) {
         if (id == null) throw new IllegalArgumentException("Customer Id should not be null.");
         for (Customer customer : storage) {
             if (customer.getId().equals(id)) {
-                return Optional.of(customer);
+                return customer;
             }
         }
-        return Optional.empty();
+        return null;
         //return storage.stream().filter(customer -> customer.getId().equals(id)).findFirst();
     }
 

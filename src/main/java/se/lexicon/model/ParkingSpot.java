@@ -35,4 +35,12 @@ public class ParkingSpot {
     public boolean isAvailable() {
         return renter == null;
     }
+
+    @Override
+    public String toString() {
+        return "ParkingSpot{" +
+                "parkingSpotId=" + parkingSpotId +
+                ", renter=" + renter +
+                '}';
+    }
 }

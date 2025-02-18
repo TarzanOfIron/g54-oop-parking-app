@@ -37,6 +37,22 @@ public class ConsoleUI {
         return input;
     }
 
+    public int getIntInput(String prompt){
+        int input;
+        while (true){
+            System.out.println(prompt);
+            input = scanner.nextInt();
+
+            if (input < 0 || input > 9)  {
+                System.out.println("Input cannot be empty. please try again.");
+            } else {
+                break;
+            }
+        }
+
+        return input;
+    }
+
 
 
     public Customer getCustomerInfoWithVehicle(){

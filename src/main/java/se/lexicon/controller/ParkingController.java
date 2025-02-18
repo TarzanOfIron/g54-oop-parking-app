@@ -65,18 +65,21 @@ public class ParkingController {
 
 
     private void displayParkingSpots() {
-        // todo implement later
         consoleUI.displayParkingSpots(lexiconParkingSpots());
     }
 
 
     private void reserveParkingSpot() {
-        // todo implement later
+        int parkingSpotId = consoleUI.getIntInput("Enter parking spot id: ");
+        Integer customerId = consoleUI.getIntInput("Enter your id: ");
+        parkingSpots.get(parkingSpotId).setRenter(customerDao.findById(customerId));
+
     }
 
 
     private void vacateParkingSpot() {
-        // todo implement later
+        int parkingSpotId = consoleUI.getIntInput("Enter parking spot id: ");
+        parkingSpots.get(parkingSpotId).setRenter(null);
     }
 
 
